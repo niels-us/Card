@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+:root{
+    --col-nar:#E54D3F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #ddd;
+    /* font-family: 'Raleway', sans-serif; */
+
+    /* font-family: 'Raleway', sans-serif; */
+    /* font-weight: bold; */
+}
+
+/***************General  ****************/
+.card {
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #aaa;
+    margin: 100px auto 0 auto;
+    overflow: hidden;
+    cursor: pointer;
+
+    /* Efecto de sombra */
+    box-shadow: 8px 8px 16px #6c6c6c,
+        -8px -8px 16px #ffffff;
+
+    transition: all 1s ease;
+}
+
+.card:hover {
+    box-shadow: -8px -8px 16px #6c6c6c,
+        8px 8px 16px #ffffff;
+}
+
+/*************** Superior ****************/
+figure {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    transition: all 1s;
+}
+
+figure span {
+    position: absolute;
+    z-index: 1000;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+figure .card__date {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background-color: var(--col-nar);
+    color: azure;
+    border-radius: 50%;
+    padding: 15px 15px 15px 15px;
+    text-align: center;
+    box-shadow: 0 0 1px var(--col-nar);
+    font-weight: bold;
+}
+
+figure .card__photos {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--col-nar);
+    color: azure;
+    padding: 12px 15px 12px 15px;
+    /* font-weight: bold; */
+}
+
+img {
+    width: 400px;
+    height: 400px;
+    transition: all 1s;
+}
+
+/* ***********Efecto Hover Superior */
+
+.card:hover figure {
+    width: 400px;
+    height: 270px;
+}
+
+.card:hover img {
+    width: 415px;
+    height: 415px;
+    filter: contrast(0.3);
+}
+
+/********* Inferior **************/
+
+.card__info {
+    position: relative;
+    background-color: beige;
+    height: 400px;
+    transition: all 2s ease;
+}
+
+.card__title {
+    padding: 30px 0 0 30px;
+    text-align: center;
+    text-align: left;
+    font-size: 31px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.card__slogan {
+    margin: 12px 0 0 35px;
+    color: var(--col-nar);
+    font-size: 25px;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+.card__description {
+    padding: 18px 50px 0 35px;
+}
+
+.card__description p {
+    color: #444;
+    line-height: 26px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+
+    font-family: 'Raleway', sans-serif;
+    opacity: 0;
+    transition-property: all;
+    transition-duration: .6s;
+    transition-timing-function: ease-in;
+}
+
+.card__feed {
+    position: absolute;
+    bottom: 225px;
+    left: 35px;
+    transition: all 1.2s;
+    font-size: 20px;
+}
+
+.card__feed li {
+    display: inline;
+    margin-right: 20px;
+    color: #666;
+}
+
+ul li i {
+    margin-right: 5px;
+}
+
+/* ***********Efecto Hover Inferior */
+.card:hover .card__description p {
+    opacity: 1;
+}
+
+.card:hover .card__info {
+    height: 330px;
+}
+
+.card:hover .card__feed {
+    left: 35px;
+    bottom: 32px;
+}
+
+
+/* EFECTO EXTRA CARD SLOGAN */
+.card__slogan {
+    position: absolute;
+    border-right: 2px solid black;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.animation {
+    animation: typewriter 2s steps(22) 1s 1 normal both,
+        blinkCursor 500ms steps(22) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 78%;
+        position: static;
+    }
+}
+
+@keyframes blinkCursor {
+    from {
+        border-right-color: black;
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+/* ******* nuevos efectos */
+.general {
+    position: relative;
+    display: flex;
+}
+
+.card1:hover {
+    animation: salto1 2s ease-in-out infinite;
+}
+
+@keyframes salto1 {
+    0% {
+        transform: translateY(-5px);
+    }
+
+    33% {
+        transform: translateX(5px);
+    }
+
+    66% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translate(5px,-5px);
+    }
+}
