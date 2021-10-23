@@ -235,3 +235,28 @@ ul li i {
         transform: translate(5px,-5px);
     }
 }
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .general {
+      display: block !important;
+      margin: 0 0 100px 0;
+    }    
+    .general .card{
+        width: 96%;
+    }
+    .card__description p{
+        font-size: 15px;
+
+    }
+    .card__feed {
+        font-size: 17px;
+    }
+    figure .card__date {
+        right: 20%;
+    }
+    .card__slogan {
+        font-size: 21px;
+    }   
+  }
